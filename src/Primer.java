@@ -12,11 +12,13 @@ public class Primer {
     private ObjectFactory of;
     private PurchaseOrderType po;
     
+    // v1
     public Primer(){
         of = new ObjectFactory();
         po = of.createPurchaseOrderType();
     }
     
+    // v1
     public void make(USAddress ship, USAddress bill, String comment,
             Items item, XMLGregorianCalendar date){
         
@@ -28,6 +30,7 @@ public class Primer {
         po.setOrderDate(date);
     }
     
+    // v1
     public void marshal(){
         try{
             JAXBElement<PurchaseOrderType> pol = of.createPurchaseOrder(po);
@@ -39,7 +42,8 @@ public class Primer {
         }
         
     }
-
+    
+    // v1
     public static void main(String args[]){
         Primer p = new Primer();
         
@@ -63,7 +67,8 @@ public class Primer {
         
         GregorianCalendar gcal = new GregorianCalendar();
         try {
-            XMLGregorianCalendar xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+            XMLGregorianCalendar xgcal = 
+            		DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
             p.make(ship, bill, "no comment", item, xgcal);
         } catch (DatatypeConfigurationException e) {
             e.printStackTrace();
