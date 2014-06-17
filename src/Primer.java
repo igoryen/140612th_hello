@@ -18,14 +18,14 @@ public class Primer {
         po = of.createPurchaseOrderType();
     }
     
-    // v1
+    // v2
     public void make(USAddress ship, USAddress bill, String comment,
-            Items item, XMLGregorianCalendar date){
+            /*Items item,*/ XMLGregorianCalendar date){
         
         PurchaseOrderType po = of.createPurchaseOrderType();
         po.setBillTo(bill);
         po.setComment(comment);
-        po.setItems(item);
+        //po.setItems(item);
         po.setShipTo(ship);
         po.setOrderDate(date);
     }
@@ -43,7 +43,7 @@ public class Primer {
         
     }
     
-    // v1
+    // v2
     public static void main(String args[]){
         Primer p = new Primer();
         
@@ -69,7 +69,7 @@ public class Primer {
         try {
             XMLGregorianCalendar xgcal = 
             		DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
-            p.make(ship, bill, "no comment", item, xgcal);
+            p.make(ship, bill, "no comment", /*item,*/ xgcal);
         } catch (DatatypeConfigurationException e) {
             e.printStackTrace();
         }
