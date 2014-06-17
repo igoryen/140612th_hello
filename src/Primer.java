@@ -18,9 +18,13 @@ public class Primer {
         po = of.createPurchaseOrderType();
     }
     
-    // v2
-    public void make(USAddress ship, USAddress bill, String comment,
-            /*Items item,*/ XMLGregorianCalendar date){
+    // v3
+    public void make(
+    		USAddress ship, 
+    		USAddress bill, 
+    		String comment,
+            /*Items item,*/ 
+    		XMLGregorianCalendar date){
         
         PurchaseOrderType po = of.createPurchaseOrderType();
         po.setBillTo(bill);
@@ -43,7 +47,7 @@ public class Primer {
         
     }
     
-    // v2
+    // v3
     public static void main(String args[]){
         Primer p = new Primer();
         
@@ -63,7 +67,7 @@ public class Primer {
         bill.setStreet("street");
         bill.setZip(new BigDecimal(456));
         
-        Items item = new Items();
+        //Items item = new Items();
         
         GregorianCalendar gcal = new GregorianCalendar();
         try {
