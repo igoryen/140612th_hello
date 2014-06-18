@@ -20,11 +20,11 @@ public class Primer {
     
     // v3
     public void make(
-    		USAddress ship, 
-    		USAddress bill, 
-    		String comment,
+            USAddress ship, 
+            USAddress bill, 
+            String comment,
             /*Items item,*/ 
-    		XMLGregorianCalendar date){
+            XMLGregorianCalendar date){
         
         PurchaseOrderType po = of.createPurchaseOrderType();
         po.setBillTo(bill);
@@ -72,7 +72,7 @@ public class Primer {
         GregorianCalendar gcal = new GregorianCalendar();
         try {
             XMLGregorianCalendar xgcal = 
-            		DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+                    DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
             p.make(ship, bill, "no comment", /*item,*/ xgcal);
         } catch (DatatypeConfigurationException e) {
             e.printStackTrace();
