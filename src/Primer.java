@@ -47,9 +47,9 @@ public class Primer {
         
     }
     
-    // v3
+    // v4
     public static void main(String args[]){
-        Primer p = new Primer();
+        Primer theApp = new Primer();
         
         USAddress ship = new USAddress();
         ship.setCity("city");
@@ -69,11 +69,10 @@ public class Primer {
         
         //Items item = new Items();
         
-        GregorianCalendar gcal = new GregorianCalendar();
+        GregorianCalendar gc = new GregorianCalendar();
         try {
-            XMLGregorianCalendar xgcal = 
-                    DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
-            p.make(ship, bill, "no comment", /*item,*/ xgcal);
+            XMLGregorianCalendar xgc = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
+            theApp.make(ship, bill, "no comment", /*item,*/ xgc);
         } catch (DatatypeConfigurationException e) {
             e.printStackTrace();
         }
